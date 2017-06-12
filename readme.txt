@@ -1,7 +1,7 @@
 ﻿=== xunhu-wy-payment-for-WooCommerce ===
 Contributors: XunhuWeb
 Donate link: https://www.wpweixin.net/product/345.html
-Tags:weixin,wy, wypay, wordpress plugin, payments, wy payments, woocommerce
+Tags:网银支付,WooCommerce, wordpress plugin, payments, 银联payments, woocommerce payment
 Requires at least: 4.0
 Stable tag: 1.0
 Tested up to: 4.7
@@ -10,13 +10,10 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 
 == Description ==
-WooCommerce Online Banking payment gateway, Support H5 In-App Web-based Payment (Official Account Payment), Don't need Online Banking certification,Don't need the domain name registration.
+让WooCommerce支持网银支付，仅限个人用户使用，企业用户请购买企业版本：https://www.wpweixin.net/product/121.html
 
 = Features = 
-* Support Online Banking payment through scan QR code
-* Support H5 In-App Web-based Payment (Official Account Payment)
-* If payment completed,will automatically redirect to order recevied page
-* Support pay again with pending orders
+* Support Online Banking payment 
 * You can settings do not display Online Banking payment in Mobile
 * Don't need Online Banking certification,Don't need the domain registration in china,Immediately opened the account.
 * 50 yuan to withdrawal
@@ -35,10 +32,7 @@ WooCommerce Online Banking payment gateway, Support H5 In-App Web-based Payment 
 * Mailbox: jeff@xunhuweb.com
 
 = Features =
-* WooCommerce微信支付个人版用于无法申请微信支付的个人用户使用
-* 支持PC扫码支付
-* 支持公众号原生支付
-* 无服务号也可以使用
+* WooCommerce网银支付用于无法申请网银的个人用户使用
 * 50元可提现
 * T+1到帐
 * 收款账户为私人微信账户
