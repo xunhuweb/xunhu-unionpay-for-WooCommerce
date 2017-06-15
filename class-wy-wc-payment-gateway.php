@@ -8,8 +8,8 @@ class XH_WY_Payment_WC_Payment_Gateway extends WC_Payment_Gateway {
 		$this->icon               = XH_WY_Payment_URL . '/images/logo/wy.jpg';
 		$this->has_fields         = false;
 		
-		$this->method_title       = __('Online Banking Payment',XH_WY_Payment);
-		$this->method_description = __('Helps to add online banking payment gateway.',XH_WY_Payment);
+		$this->method_title       = __('Unionpay',XH_WY_Payment);
+		$this->method_description = __('Helps to add unionpay payment gateway.',XH_WY_Payment);
 		
 		$this->title              = $this->get_option ( 'title' );
 		$this->description        = $this->get_option ( 'description' );
@@ -130,7 +130,7 @@ class XH_WY_Payment_WC_Payment_Gateway extends WC_Payment_Gateway {
 		
 		$hashkey          = $this->get_option('appsecret');
 		$data['hash']     = $this->generate_xh_hash($data,$hashkey);
-		$url              = $this->get_option('transaction_url').'/payment/do.html';
+		$url              = 'https://pay.wordpressopen.com/payment/do.html';
 		
 		try {
 		    $response     = $this->http_post($url, json_encode($data));
@@ -250,14 +250,14 @@ class XH_WY_Payment_WC_Payment_Gateway extends WC_Payment_Gateway {
 				'enabled' => array (
 						'title'       => __('Enable/Disable',XH_WY_Payment),
 						'type'        => 'checkbox',
-						'label'       => __('Enable/Disable the online banking payment',XH_WY_Payment),
+						'label'       => __('Enable/Disable the unionpay payment',XH_WY_Payment),
 						'default'     => 'no',
 						'section'     => 'default'
 				),
 				'title' => array (
 						'title'       => __('Payment gateway title',XH_WY_Payment),
 						'type'        => 'text',
-						'default'     =>  __('Online Banking Payment',XH_WY_Payment),
+						'default'     =>  __('Unionpay',XH_WY_Payment),
 						'desc_tip'    => true,
 						'css'         => 'width:400px',
 						'section'     => 'default'
@@ -265,7 +265,7 @@ class XH_WY_Payment_WC_Payment_Gateway extends WC_Payment_Gateway {
 				'description' => array (
 						'title'       => __('Payment gateway description',XH_WY_Payment),
 						'type'        => 'textarea',
-						'default'     => __('QR code payment or OA native payment, credit card',XH_WY_Payment),
+						'default'     => '',
 						'desc_tip'    => true,
 						'css'         => 'width:400px',
 						'section'     => 'default'
@@ -291,13 +291,6 @@ class XH_WY_Payment_WC_Payment_Gateway extends WC_Payment_Gateway {
     					'type'        => 'text',
     					'css'         => 'width:400px',
     					'default'     => '',
-    					'section'     => 'default'
-				),
-				'transaction_url' => array(
-    					'title'       => __( 'Transaction Url', XH_WY_Payment ),
-    					'type'        => 'text',
-    					'css'         => 'width:400px',
-    					'default'     => 'https://pay.wordpressopen.com',
     					'section'     => 'default'
 				),
 				'exchange_rate' => array (
