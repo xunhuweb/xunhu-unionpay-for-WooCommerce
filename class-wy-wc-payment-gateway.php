@@ -8,8 +8,8 @@ class XH_WY_Payment_WC_Payment_Gateway extends WC_Payment_Gateway {
 		$this->icon               = XH_WY_Payment_URL . '/images/logo/wy.jpg';
 		$this->has_fields         = false;
 		
-		$this->method_title       = __('Online Banking Payment',XH_WY_Payment);
-		$this->method_description = __('Helps to add online banking payment gateway.',XH_WY_Payment);
+		$this->method_title       = __('Unionpay',XH_WY_Payment);
+		$this->method_description = __('Helps to add unionpay payment gateway.',XH_WY_Payment);
 		
 		$this->title              = $this->get_option ( 'title' );
 		$this->description        = $this->get_option ( 'description' );
@@ -36,7 +36,7 @@ class XH_WY_Payment_WC_Payment_Gateway extends WC_Payment_Gateway {
 	        ||!isset($data['trade_order_id'])){
 	            return;
 	    }
-	    if(isset($data['plugins'])&&$data['plugins']!='woo-wy'){
+	    if(isset($data['plugins'])&&$data['plugins']!='woo-unionpay'){
 	        return;
 	    }
 	
@@ -113,7 +113,7 @@ class XH_WY_Payment_WC_Payment_Gateway extends WC_Payment_Gateway {
 		$data=array(
 		      'version'   => '1.1',//api version
 		      'lang'       => get_option('WPLANG','zh-cn'),   
-		      'plugins'   => 'woo-online-banking',
+		      'plugins'   => 'woo-unionpay',
 		      'appid'     => $this->get_option('appid'),
 		      'trade_order_id'=> $order_id,
 		      'payment'   => 'online_banking',
@@ -130,7 +130,7 @@ class XH_WY_Payment_WC_Payment_Gateway extends WC_Payment_Gateway {
 		
 		$hashkey          = $this->get_option('appsecret');
 		$data['hash']     = $this->generate_xh_hash($data,$hashkey);
-		$url              = $this->get_option('transaction_url').'/payment/do.html';
+		$url              = 'https://pay.wordpressopen.com/payment/do.html';
 		
 		try {
 		    $response     = $this->http_post($url, json_encode($data));
@@ -235,7 +235,8 @@ class XH_WY_Payment_WC_Payment_Gateway extends WC_Payment_Gateway {
 	 * @param bool $plain_text
 	 */
 	public function email_instructions( $order, $sent_to_admin, $plain_text = false ) {
-	    if ( $this->instructions && ! $sent_to_admin && $this->id === $order->payment_method ) {
+	    $method = method_exists($order ,'get_payment_method')?$order->get_payment_method():$order->payment_method;
+	    if ( $this->instructions && ! $sent_to_admin && $this->id === $method ) {
 	        echo wpautop( wptexturize( $this->instructions ) ) . PHP_EOL;
 	    }
 	}
@@ -250,14 +251,14 @@ class XH_WY_Payment_WC_Payment_Gateway extends WC_Payment_Gateway {
 				'enabled' => array (
 						'title'       => __('Enable/Disable',XH_WY_Payment),
 						'type'        => 'checkbox',
-						'label'       => __('Enable/Disable the online banking payment',XH_WY_Payment),
+						'label'       => __('Enable/Disable the unionpay payment',XH_WY_Payment),
 						'default'     => 'no',
 						'section'     => 'default'
 				),
 				'title' => array (
 						'title'       => __('Payment gateway title',XH_WY_Payment),
 						'type'        => 'text',
-						'default'     =>  __('Online Banking Payment',XH_WY_Payment),
+						'default'     =>  __('Unionpay',XH_WY_Payment),
 						'desc_tip'    => true,
 						'css'         => 'width:400px',
 						'section'     => 'default'
@@ -265,7 +266,7 @@ class XH_WY_Payment_WC_Payment_Gateway extends WC_Payment_Gateway {
 				'description' => array (
 						'title'       => __('Payment gateway description',XH_WY_Payment),
 						'type'        => 'textarea',
-						'default'     => __('QR code payment or OA native payment, credit card',XH_WY_Payment),
+						'default'     => '',
 						'desc_tip'    => true,
 						'css'         => 'width:400px',
 						'section'     => 'default'
@@ -293,13 +294,6 @@ class XH_WY_Payment_WC_Payment_Gateway extends WC_Payment_Gateway {
     					'default'     => '',
     					'section'     => 'default'
 				),
-				'transaction_url' => array(
-    					'title'       => __( 'Transaction Url', XH_WY_Payment ),
-    					'type'        => 'text',
-    					'css'         => 'width:400px',
-    					'default'     => 'https://pay.wordpressopen.com',
-    					'section'     => 'default'
-				),
 				'exchange_rate' => array (
     					'title'       => __( 'Exchange Rate',XH_WY_Payment),
     					'type'        => 'text',
@@ -312,7 +306,8 @@ class XH_WY_Payment_WC_Payment_Gateway extends WC_Payment_Gateway {
 	}
 	   
 	public function get_order_title($order, $limit = 98) {
-		$title ="#{$order->get_id()}";
+	    $order_id = method_exists($order, 'get_id')? $order->get_id():$order->id;
+	    $title ="#{$order_id}";
 		
 		$order_items = $order->get_items();
 		if($order_items){
