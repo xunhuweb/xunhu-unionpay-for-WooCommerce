@@ -1,31 +1,31 @@
-﻿=== Xunhu-Unionpay-Payment-For-Woocommerce ===
+﻿=== xunhu-wy-payment-for-WooCommerce ===
 Contributors: XunhuWeb
-Donate link: https://www.wpweixin.net/product/121.html
-Tags:woocommerce,银联网银支付,UnionPay,baifubao,百付宝,woo
+Donate link: https://www.wpweixin.net/product/345.html
+Tags:weixin,wy, wypay, wordpress plugin, payments, wy payments, woocommerce
 Requires at least: 4.0
 Stable tag: 1.0
-Tested up to: 4.8
+Tested up to: 4.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Xunhu-Woo-Unionpay provide unionpay gateway for woocommerce.
 
 == Description ==
-WooCommerce online bank payment gateway,Don't need enterprise certification,Don't need the domain name registration.(此插件适合无法开通网银支付的用户使用,免签约免备案。企业用户不适合。)<a href="https://www.wpweixin.net/product/121.html" target="_blank">WordPress WooCommerce百度网银支付企业版</a>
+WooCommerce Online Banking payment gateway, Support H5 In-App Web-based Payment (Official Account Payment), Don't need Online Banking certification,Don't need the domain name registration.
 
 = Features = 
-* Support Online bank payment 
-* Support most Online bank payment in china 
+* Support Online Banking payment through scan QR code
+* Support H5 In-App Web-based Payment (Official Account Payment)
+* If payment completed,will automatically redirect to order recevied page
 * Support pay again with pending orders
-* Don't need alipay certification,Don't need the domain registration in china,Immediately opened the account.
+* You can settings do not display Online Banking payment in Mobile
+* Don't need Online Banking certification,Don't need the domain registration in china,Immediately opened the account.
 * 50 yuan to withdrawal
 * The next day to account
-* Bound to personal alipay account
-* Need enterprise or cross-border payment of Alipay Pay WooCommerce plugin,contact us: http://www.wpweixin.net
+* Bound to personal Online Banking account
 
 
 = GitHub: =
-* Project url in GitHub: https://github.com/xunhuweb/xunhu-unionpay-for-WooCommerce
+* Project url in GitHub: https://github.com/xunhuweb/xunhu-wy-payment-for-WooCommerce
 
 = Donation: =
 * If this plugin really benefits you, give me a high praise, or recommend the plug-in to your friends
@@ -34,16 +34,35 @@ WooCommerce online bank payment gateway,Don't need enterprise certification,Don'
 = Support Mail: =
 * Mailbox: jeff@xunhuweb.com
 
+= Features =
+* WooCommerce微信支付个人版用于无法申请微信支付的个人用户使用
+* 支持PC扫码支付
+* 支持公众号原生支付
+* 无服务号也可以使用
+* 50元可提现
+* T+1到帐
+* 收款账户为私人微信账户
+
+
 
 == Installation ==
 1. Install WooCommerce plugin and configure your store (if you haven't done so already - http://wordpress.org/plugins/woocommerce/).
-2. Install "Xunhu-Unionpay-Payment-For-Woocommerce" wordpress plugin just like any other Wordpress plugin.
+2. Install "xunhu-wy-payment-for-WooCommerce" wordpress plugin just like any other Wordpress plugin.
 3. Activate.
-
+4. Regist your account in http://mp.wordpressopen.com/ 
+5. Bound to personal Online Banking account
+6. bulid a new application get appid and key put in plugin 
+7. If the main currency of your store is not Chinese Yuan, please also set the exchange rate so that Online Banking can convert the price to Chinese Yuan.
 
 
 == Screenshots  ==
-1. Pay screen in online payment
+1. Online Banking settings page
+2. Checkout with option for wy payment.
+3. Order pay screen, including QR code of wy  and payment amount.
+4. Pay screen in Online Banking
+5. Online Banking mobile Screenshots
+
+
 
 
 == Remove plugin ==

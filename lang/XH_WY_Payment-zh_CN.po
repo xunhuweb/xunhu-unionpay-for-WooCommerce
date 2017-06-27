@@ -1,15 +1,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 迅虎商店\n"
-"POT-Creation-Date: 2017-06-15 09:36+0800\n"
-"PO-Revision-Date: 2017-06-15 09:36+0800\n"
+"POT-Creation-Date: 2017-06-11 19:05+0800\n"
+"PO-Revision-Date: 2017-06-11 19:05+0800\n"
 "Last-Translator: ranj <ranj@evget.com>\n"
 "Language-Team: 重庆迅虎网络有限公司 <jeff@xunhuweb.com>\n"
 "Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.7\n"
+"X-Generator: Poedit 1.8.11\n"
 "X-Poedit-Basepath: ..\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -17,11 +17,11 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 
 #: class-wy-wc-payment-gateway.php:11 class-wy-wc-payment-gateway.php:260
-msgid "Unionpay"
+msgid "Online Banking Payment"
 msgstr "网银支付"
 
 #: class-wy-wc-payment-gateway.php:12
-msgid "Helps to add unionpay payment gateway."
+msgid "Helps to add online banking payment gateway."
 msgstr "新增网银支付网关。"
 
 #: class-wy-wc-payment-gateway.php:144
@@ -33,7 +33,7 @@ msgid "Enable/Disable"
 msgstr "启用/禁用"
 
 #: class-wy-wc-payment-gateway.php:253
-msgid "Enable/Disable the unionpay payment"
+msgid "Enable/Disable the online banking payment"
 msgstr "启用/禁用网银支付"
 
 #: class-wy-wc-payment-gateway.php:258
@@ -43,6 +43,10 @@ msgstr "支付网关标题"
 #: class-wy-wc-payment-gateway.php:266
 msgid "Payment gateway description"
 msgstr "支付网关描述"
+
+#: class-wy-wc-payment-gateway.php:268
+msgid "QR code payment or OA native payment, credit card"
+msgstr "二维码扫描支付或H5本地支付，信用卡支付"
 
 #: class-wy-wc-payment-gateway.php:274
 msgid "Instructions"
@@ -68,11 +72,23 @@ msgstr ""
 msgid "APP Secret"
 msgstr "APP Secret"
 
-#: class-wy-wc-payment-gateway.php:297
+#: class-wy-wc-payment-gateway.php:295
+msgid ""
+"<a target=\"_blank\" href=\"http://mp.wordpressopen.com\">register and get "
+"app secret</a>."
+msgstr ""
+"<a target=\"_blank\" href=\"http://mp.wordpressopen.com\">注册并获取密钥</"
+"a>."
+
+#: class-wy-wc-payment-gateway.php:298
+msgid "Transaction Url"
+msgstr "网关地址"
+
+#: class-wy-wc-payment-gateway.php:305
 msgid "Exchange Rate"
 msgstr "汇率"
 
-#: class-wy-wc-payment-gateway.php:300
+#: class-wy-wc-payment-gateway.php:308
 msgid "Set the exchange rate to RMB. When it is RMB, the default is 1"
 msgstr "设置转换成人民币的汇率，当前货币为人民币时，汇率默认等于1"
 
@@ -80,24 +96,8 @@ msgstr "设置转换成人民币的汇率，当前货币为人民币时，汇率
 msgid "Settings"
 msgstr "设置"
 
-#~ msgid "QR code payment or OA native payment, credit card"
-#~ msgstr "二维码扫描支付或H5本地支付，信用卡支付"
-
-#~ msgid "Online Banking Payment"
-#~ msgstr "网银支付"
-
-#~ msgid "Enable/Disable the online banking payment"
-#~ msgstr "启用/禁用网银支付"
-
-#~ msgid ""
-#~ "<a target=\"_blank\" href=\"http://mp.wordpressopen.com\">register and "
-#~ "get app secret</a>."
-#~ msgstr ""
-#~ "<a target=\"_blank\" href=\"http://mp.wordpressopen.com\">注册并获取密钥"
-#~ "</a>."
-
-#~ msgid "Transaction Url"
-#~ msgstr "网关地址"
+#~ msgid "Enable/Disable the wy payment"
+#~ msgstr "启用/禁用微信支付"
 
 #~ msgid "Wechat Payment"
 #~ msgstr "微信支付"

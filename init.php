@@ -1,12 +1,12 @@
 <?php
 /*
- * Plugin Name: xunhu-alipay-payment-for-WooCommerce
+ * Plugin Name: Xunhu Online Banking Payment For WooCommerce
  * Plugin URI: http://www.wpweixin.net
- * Description: Xunhu-Woo-Unionpay provide unionpay gateway for woocommerce.
- * Author: xunhuweb
+ * Description: 微信扫码支付、微信H5支付、支付宝扫码支付、网银支付
+ * Author: 重庆迅虎网络有限公司
  * Version: 1.0.0
  * Author URI:  http://www.wpweixin.net
- * Text Domain: woocommerce,银联网银支付,UnionPay,baifubao,百付宝,woo
+ * Text Domain: Online Banking WooCommerce
  */
 
 if (! defined ( 'ABSPATH' ))
