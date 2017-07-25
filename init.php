@@ -1,10 +1,10 @@
 <?php
 /*
- * Plugin Name: xunhu-alipay-payment-for-WooCommerce
+ * Plugin Name: xunhu-unionpay-payment-for-WooCommerce
  * Plugin URI: http://www.wpweixin.net
  * Description: Xunhu-Woo-Unionpay provide unionpay gateway for woocommerce.
  * Author: xunhuweb
- * Version: 1.0.1
+ * Version: 1.0.2
  * Author URI:  http://www.wpweixin.net
  * Text Domain: woocommerce,银联网银支付,UnionPay,baifubao,百付宝,woo
  */
@@ -13,7 +13,7 @@ if (! defined ( 'ABSPATH' ))
 	exit (); // Exit if accessed directly
 
 if (! defined ( 'XH_WY_Payment' )) {define ( 'XH_WY_Payment', 'XH_WY_Payment' );} else {return;}
-define ( 'XH_WY_Payment_VERSION', '1.0.1');
+define ( 'XH_WY_Payment_VERSION', '1.0.2');
 define ( 'XH_WY_Payment_ID', 'xh-wy-payment-wc');
 define ( 'XH_WY_Payment_FILE', __FILE__);
 define ( 'XH_WY_Payment_DIR', rtrim ( plugin_dir_path ( XH_WY_Payment_FILE ), '/' ) );
