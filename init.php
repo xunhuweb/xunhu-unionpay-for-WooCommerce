@@ -1,10 +1,10 @@
 <?php
 /*
- * Plugin Name: xunhu-unionpay-payment-for-WooCommerce
+ * Plugin Name: Xunhu unionpay Payment For WooCommerce
  * Plugin URI: http://www.wpweixin.net
  * Description: Xunhu-Woo-Unionpay provide unionpay gateway for woocommerce.
  * Author: xunhuweb
- * Version: 1.0.2
+ * Version: 1.0.0
  * Author URI:  http://www.wpweixin.net
  * Text Domain: woocommerce,银联网银支付,UnionPay,baifubao,百付宝,woo
  */

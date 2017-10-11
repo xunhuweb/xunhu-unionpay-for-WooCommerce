@@ -283,15 +283,15 @@ class XH_WY_Payment_WC_Payment_Gateway extends WC_Payment_Gateway {
     					'title'       => __( 'APP ID', XH_WY_Payment ),
     					'type'        => 'text',
     					'css'         => 'width:400px',
-    					'default'     => '',
+    					'default'     => '20146122711',
     					'section'     => 'default',
-                        'description' =>__('<a target="_blank" href="http://mp.wordpressopen.com">register and get app id</a>.', XH_WY_Payment )
+                        //'description' =>__('<a target="_blank" href="http://mp.wordpressopen.com">register and get app id</a>.', XH_WY_Payment )
 				),
 				'appsecret' => array(
     					'title'       => __( 'APP Secret', XH_WY_Payment ),
     					'type'        => 'text',
     					'css'         => 'width:400px',
-    					'default'     => '',
+    					'default'     => '44E76C565F233E4CBB4F5E1B26E2D2A1',
     					'section'     => 'default'
 				),
 				'exchange_rate' => array (
